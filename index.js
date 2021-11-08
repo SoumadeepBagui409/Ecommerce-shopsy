@@ -35,7 +35,6 @@ mongoose.connect(process.env.MONGODB_URL,
         useUnifiedTopology: true
     })
 .then(()=>{
-    console.log("Connected to database");
 })
 .catch((err)=>{
     console.log(err);
@@ -85,6 +84,4 @@ app.use(authRoutes);
 
 
 
-app.listen(process.env.PORT ||  3000,(req,res)=>{
-    console.log("connected to server");
-})
+app.listen(process.env.PORT ||  3000)
