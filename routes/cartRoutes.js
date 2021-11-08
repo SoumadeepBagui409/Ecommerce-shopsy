@@ -13,7 +13,7 @@ router.get('/card/user',isLoggedIn,async(req,res)=>{
 
 router.get('/cart/:productId/add',isLoggedIn,async(req,res)=>{
     const {productId} = req.params;
-    console.log(productId);
+    //console.log(productId);
     const product  = await Product.findById(productId);
     const user = req.user;
     user.cart.push(product);

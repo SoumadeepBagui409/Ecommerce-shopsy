@@ -35,6 +35,7 @@ mongoose.connect(process.env.MONGODB_URL,
         useUnifiedTopology: true
     })
 .then(()=>{
+    
 })
 .catch((err)=>{
     console.log(err);
