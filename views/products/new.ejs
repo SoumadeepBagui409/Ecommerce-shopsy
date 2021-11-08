@@ -1,0 +1,38 @@
+<%-include("../partials/header");-%>
+
+<%-include("../partials/navbar");-%>
+
+   
+    <div class="container">
+        <main>
+            <h1 class="display-3">Add New Product</h1>
+        </main>
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <form action="/product" method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Name of the product">
+                    </div>
+                    <div class="mb-3">
+                        <label for="img" class="form-label">Image URL</label>
+                        <input type="text" class="form-control" name="img" id="img" placeholder="dd image url"> 
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="text" class="form-control" name="price" id="price" placeholder="Add price"> 
+                    </div>
+                    <div class="mb-3">
+                        <label for="desc" class="form-label">Description</label>
+                        <textarea class="form-control" name="desc" id="desc"  rows="10">Add your Description</textarea>
+                    </div>
+                    <button class="btn btn-outline-success" type="submit">Add Product</button>
+                </form>
+            </div>
+            <div class="col-lg-3"></div>
+    
+        </div>
+       
+    </div>
+<%-include("../partials/footer");-%>

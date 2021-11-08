@@ -1,0 +1,37 @@
+<%-include("../partials/header");-%>
+<%-include("../partials/navbar");-%>
+
+
+<main>
+   
+    <div class="container" >
+        <div class="row">
+            <div class="col-lg-6" style="margin: 10px auto">
+    <form method="POST" action="/product/<%=product._id%>?_method=PATCH" >
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" id="name" value="<%=product.name%>" >
+        </div>
+        <div class="mb-3">
+            <label for="img" class="form-label">Image URL</label>
+            <input type="text" class="form-control" name="img" id="img"  value="<%=product.img%>"> 
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" class="form-control" name="price" id="price" value="<%=product.price%>" > 
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Description</label>
+            <textarea class="form-control" name="desc" id="desc"  rows="10"><%=product.desc%></textarea>
+        </div>
+        <button class="btn btn-outline-success" type="submit">Edit Product</button>
+    </form>
+        </div>
+    </div>
+</div>
+</main>
+
+
+<%-include("../partials/footer");-%>
+
+

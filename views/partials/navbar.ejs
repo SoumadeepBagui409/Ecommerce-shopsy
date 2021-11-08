@@ -1,0 +1,54 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: black;">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="/product"> <i class="fab fa-opencart"></i> &nbsp; Shopy</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/product">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/product/new">New</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+        <%if(!currentUser){%>
+          <li class="nav-item">
+            <a class="nav-link active"  href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/signup">Signup</a>
+          </li>
+        <%}else{%>
+          <li class="nav-item">
+            <a class="nav-link active text-capitalize" href="/">Hello <%=currentUser.username%></a>
+          </li>
+          <li class="nav-item me-2">
+            <a class="nav-link active position-relative" href="/card/user">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="position-absolute top-3 start-100   translate-middle badge rounded-pill bg-success">
+               <%=currentUser.cart.length%>
+              <span class="visually-hidden">unread messages</span>
+                </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/logout">Logout</a>
+          </li>
+        <%}%>
+      </ul>
+
+
+
+    </div>
+  </div>
+</nav>
