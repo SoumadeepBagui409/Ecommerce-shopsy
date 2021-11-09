@@ -35,7 +35,7 @@ mongoose.connect(process.env.MONGODB_URL,
         useUnifiedTopology: true
     })
 .then(()=>{
-    
+    console.log("connected");
 })
 .catch((err)=>{
     console.log(err);
@@ -67,6 +67,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+
 app.use((req,res,next)=>{
     res.locals.success = req.flash('success');
      res.locals.error = req.flash('error');
@@ -85,4 +86,6 @@ app.use(authRoutes);
 
 
 
-app.listen(process.env.PORT ||  3000)
+app.listen(process.env.PORT || 3000,(req,res)=>{
+    console.log("connected to server");
+});

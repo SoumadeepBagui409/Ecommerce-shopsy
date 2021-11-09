@@ -4,8 +4,7 @@
   "description": "E commerse website",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "run": "nodemon ./index.js"
+    "start": "nodemon ./index.js"
   },
   "author": "Soumadeep Bagui",
   "license": "MIT",
