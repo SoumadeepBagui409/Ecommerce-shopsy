@@ -86,6 +86,6 @@ app.use(authRoutes);
 
 
 
-app.listen(process.env.PORT || 3000,(req,res)=>{
+app.listen(process.env.PORT || 3000,()=>{
     console.log("connected to server");
 });
