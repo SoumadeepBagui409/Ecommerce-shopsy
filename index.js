@@ -29,11 +29,7 @@ const sessionConfig = {
 
 app.use(session(sessionConfig));
 app.use(flash());
-mongoose.connect(process.env.MONGODB_URL,
-    {
-        useNewUrlParser:true,
-        useUnifiedTopology: true
-    })
+mongoose.connect(process.env.MONGODB_URL)
 .then(()=>{
     console.log("connected");
 })
@@ -86,6 +82,6 @@ app.use(authRoutes);
 
 
 
-app.listen(process.env.PORT || 3000,(req,res)=>{
+app.listen(process.env.PORT || 3000,()=>{
     console.log("connected to server");
 });
