@@ -23,8 +23,8 @@ const User = require('./models/user');
 const passport = require('passport');
 const sessionConfig = {
     secret: 'just a secret',
-    resave: true,
-    saveUnitialized: true,
+    resave: false,
+    saveUninitialized: true,
 }
 
 app.use(session(sessionConfig));
