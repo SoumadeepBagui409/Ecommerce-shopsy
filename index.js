@@ -82,6 +82,6 @@ app.use(authRoutes);
 
 
 
-app.listen(process.env.PORT || 3000, function(){
-    console.log("Express server listen on port %d in %s mode",this.address().port,app.settings.env);
+app.listen(process.env.PORT || 3000, ()=>{
+    console.log(`server running at ${process.env.PORT}`);
 });
