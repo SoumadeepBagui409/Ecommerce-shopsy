@@ -16,6 +16,8 @@
                   
                   <a href="/cart/<%=product._id%>/add" class="btn btn-outline-primary">Add To Cart</a>
                   
+                    <%try{%>
+                  <%if(currentUser.username===process.env.ADMIN){%>
                   <br>
                   <br>
                   <a href="<%=product._id%>/edit" class="btn btn-outline-info">Edit</a>
@@ -24,6 +26,9 @@
                   <form method="POST" action="/product/<%=product._id%>?_method=DELETE">
                     <button type="submit" class="btn btn-danger">Delete</button>
                   </form>
+                  <%}%>
+                  <%}catch(err){%>
+                    <%}%>
                 
                  
                 </div>
